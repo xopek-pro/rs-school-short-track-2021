@@ -9,8 +9,8 @@
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new Error('Not implemented');
+function deleteDigit(n) {
+  return Math.max.apply(null, n.toString().split('').map((val, ind, arr) => Array.prototype.concat(arr.slice(0, ind), arr.slice(ind + 1)).join('')));
 }
 
 module.exports = deleteDigit;
