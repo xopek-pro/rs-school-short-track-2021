@@ -12,7 +12,13 @@
 function sortByHeight(arr) {
   const result = arr;
   const indexes = arr.map((val, ind) => (val === -1 ? val : ind)).filter((v) => v !== -1);
-  const sorted = arr.filter((v) => v !== -1).sort();
+  const sorted = arr.filter((v) => v !== -1).sort((a, b) => {
+    let res = 0;
+    if (a > b) res = 1;
+    if (a === b) res = 0;
+    if (a < b) res = -1;
+    return res;
+  });
   for (let i = 0; i < sorted.length; i++) {
     result[indexes[i]] = sorted[i];
   }
@@ -20,4 +26,5 @@ function sortByHeight(arr) {
 }
 
 module.exports = sortByHeight;
-//console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]));
+// console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]));
+// console.log(sortByHeight([2,2,4,9,11,16]));
