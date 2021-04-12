@@ -14,5 +14,3 @@
 }
 
 module.exports = getCommonCharacterCount;
-// debugger
-// console.log(getCommonCharacterCount("aabcc", "adcaa"));
